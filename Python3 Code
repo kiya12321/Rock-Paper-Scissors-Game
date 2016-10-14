@@ -1,0 +1,54 @@
+# This is a Rock, Paper, Scissors game made by Kari Tant
+from random import randint
+
+
+def main():
+    """Main Mod"""
+
+
+# variables
+player = ""
+computer = ""
+# list of play options
+t = ["Rock", "Paper", "Scissors"]
+
+main()
+
+
+def game():
+    """Game mod"""
+print("Hi, welcome to a game of Rock, Paper, Scissors! Enter your choice and see if you win!")
+print("Make sure you capitalize your answer and have fun!")
+
+# random play by computer
+computer = t[randint(0, 2)]
+
+# set player to False
+player = False
+
+while player == False:
+    # set player to True
+    player = input("Rock, Paper, or Scissors?")
+    if player == computer:
+        print("\nIt's a tie, Try again!")
+    elif player == "Rock":
+        if computer == "Paper":
+            print("\nYou lose... ",computer, "wraps", player)
+        else:
+            print("\nYou win! ",player, "smashes", computer)
+    elif player == "Paper":
+        if computer == "Scissors":
+            print("\nYou lose... ",computer, "cut", player)
+        else:
+            print("\nYou win! ",player, "wraps", computer)
+    elif player == "Scissors":
+        if computer == "Rock":
+            print("\nYou lose... ",computer, "smashes", player)
+        else:
+            print("\nYou win! ",player, "cut", computer)
+    else:
+        print("\nSorry, that is not an option. You can use Rock, Paper or Scissors. Please try again.")
+    # Loop continues
+    player = False
+    computer = t[randint(0, 2)]
+game()
